@@ -1,0 +1,262 @@
+:root {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --text: #222222;
+  --subtle: #555555;
+  --primary: #2878b5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.page {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: var(--panel);
+  padding: 28px 32px;
+}
+
+/* ── Header ── */
+
+.header {
+  margin-bottom: 8px;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-left h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.header-left .meta {
+  font-size: 13px;
+  color: var(--subtle);
+  margin-bottom: 2px;
+  line-height: 1.6;
+}
+
+.header-right {
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+
+/* ── Section headers ── */
+
+section {
+  margin-top: 18px;
+}
+
+section h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--primary);
+  margin-bottom: 10px;
+}
+
+/* ── Skills grid ── */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px 14px;
+}
+
+.skill-item {
+  padding: 0;
+  display: flex;
+}
+
+.skill-label {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.skill-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--subtle);
+  flex: 1;
+}
+
+/* ── Line rows (unified for all sections) ── */
+
+.line-row {
+  font-size: 13.5px;
+  margin-bottom: 4px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.line-row-bold {
+  font-weight: 600;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hi-list {
+  padding-left: 18px;
+  margin-bottom: 8px;
+  margin-top: -1px;
+}
+
+.hi-list li {
+  font-size: 13px;
+  margin-bottom: 2px;
+  line-height: 1.5;
+}
+
+/* ── Entry (for campus experience items) ── */
+
+.entry + .entry {
+  margin-top: 18px;
+}
+
+/* ── Export toolbar ── */
+
+.export-toolbar {
+  position: fixed;
+  top: 16px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-export {
+  font-size: 13px;
+  font-family: inherit;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  color: #fff;
+}
+
+.btn-export:hover {
+  opacity: 0.85;
+}
+
+.btn-export:active {
+  opacity: 0.7;
+}
+
+.btn-pdf {
+  background: #2878b5;
+}
+
+.btn-png {
+  background: #d35400;
+}
+
+/* ── Print ── */
+
+@media print {
+  @page {
+    margin: 0.75cm 0.85cm;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    margin: 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: auto;
+  }
+
+  a {
+    color: var(--primary) !important;
+    text-decoration: none;
+  }
+
+  section {
+    break-inside: auto;
+  }
+
+  .line-row-bold {
+    break-inside: avoid;
+  }
+
+  .entry {
+    break-inside: avoid;
+  }
+
+  .hi-list {
+    break-inside: avoid;
+  }
+}
+
+@media screen {
+  body {
+    background: #e8e8e8;
+  }
+
+  .page {
+    margin: 0 auto 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
