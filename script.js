@@ -7,6 +7,16 @@
   const btnPdf = document.getElementById('btn-pdf');
   const btnPng = document.getElementById('btn-png');
 
+  function loadAvatar() {
+    if (!window.PROFILE_AVATAR_BASE64) {
+      return;
+    }
+
+    document.querySelectorAll('img[data-avatar]').forEach(function (img) {
+      img.src = 'data:image/png;base64,' + window.PROFILE_AVATAR_BASE64;
+    });
+  }
+
   // ── 按钮状态 ──
   const originalTextMap = new Map();
 
@@ -88,4 +98,6 @@
   if (btnPng) {
     btnPng.addEventListener('click', exportPNG);
   }
+
+  loadAvatar();
 })();
