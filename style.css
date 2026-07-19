@@ -3,7 +3,8 @@
   --panel: #ffffff;
   --text: #222222;
   --subtle: #555555;
-  --primary: #2878b5;
+  --primary: #d12020;
+  --link: #555555;
 }
 
 * {
@@ -22,7 +23,7 @@ body {
 }
 
 a {
-  color: var(--primary);
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -223,7 +224,7 @@ section h2 {
   }
 
   a {
-    color: var(--primary) !important;
+    color: var(--link) !important;
     text-decoration: none;
   }
 
