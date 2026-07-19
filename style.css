@@ -232,6 +232,11 @@ section h2 {
     break-inside: auto;
   }
 
+  section:last-of-type {
+    break-before: page;
+    page-break-before: always;
+  }
+
   .line-row-bold {
     break-inside: avoid;
   }
