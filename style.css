@@ -18,7 +18,7 @@ body {
   color: var(--text);
   background: var(--bg);
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -43,7 +43,7 @@ a:hover {
 /* ── Header ── */
 
 .header {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .header-main {
@@ -53,17 +53,17 @@ a:hover {
 }
 
 .header-left h1 {
-  font-size: 28px;
+  font-size: 29px;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   color: var(--text);
 }
 
 .header-left .meta {
-  font-size: 13px;
+  font-size: 13.2px;
   color: var(--subtle);
-  margin-bottom: 2px;
-  line-height: 1.6;
+  margin-bottom: 3px;
+  line-height: 1.65;
 }
 
 .header-right {
@@ -84,16 +84,16 @@ a:hover {
 /* ── Section headers ── */
 
 section {
-  margin-top: 14px;
+  margin-top: 17px;
 }
 
 section h2 {
-  font-size: 15.5px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--primary);
-  padding-bottom: 3px;
+  padding-bottom: 4px;
   border-bottom: 1.5px solid var(--primary);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 /* ── Skills grid ── */
@@ -101,7 +101,7 @@ section h2 {
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px 14px;
+  gap: 12px 14px;
 }
 
 .skill-item {
@@ -111,15 +111,15 @@ section h2 {
 
 .skill-label {
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: 13.8px;
   color: var(--text);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .skill-desc {
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 13.2px;
+  line-height: 1.65;
   color: var(--subtle);
   flex: 1;
 }
@@ -127,9 +127,9 @@ section h2 {
 /* ── Line rows (unified for all sections) ── */
 
 .line-row {
-  font-size: 13px;
-  margin-bottom: 3px;
-  line-height: 1.5;
+  font-size: 13.2px;
+  margin-bottom: 4px;
+  line-height: 1.6;
   text-align: justify;
 }
 
@@ -143,21 +143,67 @@ section h2 {
 }
 
 .hi-list {
-  padding-left: 18px;
-  margin-bottom: 6px;
-  margin-top: 0;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  margin-top: 2px;
 }
 
 .hi-list li {
-  font-size: 12.5px;
-  margin-bottom: 1px;
-  line-height: 1.45;
+  font-size: 13px;
+  margin-bottom: 3px;
+  line-height: 1.6;
+}
+
+/* ── Internship highlights ── */
+
+.internship-entry .line-row {
+  font-size: 13.2px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.internship-entry .line-row-bold {
+  font-size: 13.8px;
+  margin-bottom: 6px;
+}
+
+.internship-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 11px 0 0;
+}
+
+.internship-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  font-size: 13.2px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.internship-list li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  top: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.internship-list li:last-child {
+  margin-bottom: 0;
+}
+
+.internship-topic {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 /* ── Entry (for campus experience items) ── */
 
 .entry + .entry {
-  margin-top: 13px;
+  margin-top: 16px;
 }
 
 /* ── Export toolbar ── */
