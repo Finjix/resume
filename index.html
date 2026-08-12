@@ -23,7 +23,7 @@
             <h1>钟丰骏</h1>
             <p class="meta">数字媒体技术 | 广东技术师范大学</p>
             <p class="meta">电话：136-2045-5680</p>
-            <p class="meta">邮箱：zf2857@gmail.com</p>
+            <p class="meta">邮箱：zf2857@qq.com</p>
             <p class="meta">个人主页：<a href="https://github.com/Finjix" target="_blank" rel="noreferrer">https://github.com/Finjix</a></p>
           </div>
           <div class="header-right">
@@ -37,12 +37,26 @@
         <h2>实习经历</h2>
 
         <div class="entry">
-          <p class="line-row line-row-bold">2026-04 ~ 至今 ｜ 网易互娱-运营中心-内容制作中心-管线生产&设计组 ｜ AI 内容工具平台开发</p>
+          <p class="line-row line-row-bold">2026-04 ~ 至今 ｜ 网易互娱-运营中心-内容制作中心-管线生产&设计组 ｜ AIGC 应用平台开发</p>
+          <p class="line-row"><span class="label">项目背景：</span>参与赛事美术 AIGC 工具平台建设，面向游戏运营与设计团队，将生图、生视频、抠像、超分等模型能力封装为可直接使用的工具，解决模型调用复杂、GPU 渲染资源有限、异步任务难追踪及产物难复用等问题。</p>
+          <p class="line-row line-row-bold">游戏营销素材自动化生产（召回老玩家、拉新与付费转化）</p>
           <ul class="hi-list">
-            <li>从 0 到 1 搭建 AIGC 工具聚合平台，负责功能开发、部署上线与迭代维护</li>
-            <li>累计贡献 1k+ 次提交，落地 10+ 个业务功能&工具能力，实现 AI 提效运营团队的内容生产</li>
-            <li>接入 AI 网关、n8n、ComfyUI 等生成链路，实现前端任务提交、渲染机调度处理、轮询/回调与结果下载流程</li>
-            <li>技术栈：Vue 3、Vite、Canvas、Node.js、Vercel</li>
+            <li><strong>交付效率数量级提升：</strong>将人工单张制作改为自动批量生成，12–15 分钟最多产出 <strong>128 张</strong>投放素材，已应用于梦幻西游、永劫无间等 <strong>20+ 款游戏</strong>，覆盖微信、应用商店等 <strong>64 个渠道</strong>。</li>
+            <li><strong>降低非专业用户使用门槛：</strong>将复杂参数收敛为默认配置，并通过 A/B 双版及失败重生成兜底。经业务验收可直接投放的素材首次通过率约 <strong>90%</strong>，兜底后可用率达 <strong>95%</strong>。</li>
+            <li><strong>投放策略资产化：</strong>沉淀 <strong>614 条</strong>场景数据集，涵盖六类投放策略分类、按渠道自动匹配，并独立设计“投流数据回流 → 清洗 → AI 定期生成提示词入库”的迭代机制。</li>
+            <li><strong>多模型分级调度：</strong>依据任务质量要求与模型能力边界进行模型路由。按模型调用单价及实际任务量测算，在维持良品率的前提下，单张调用成本降低约 <strong>70%</strong>。</li>
+          </ul>
+          <p class="line-row line-row-bold">渲染机调用链路与任务稳定性</p>
+          <ul class="hi-list">
+            <li>负责 ComfyUI 本地生成链路的渲染机调度：前端上传/提交 → FlowX API → FIFO 队列与能力匹配 → Windows NVIDIA 渲染节点 → ComfyUI 工作流 → 轮询/进度 → 结果归档与同源返回，打通从任务触发到交付的完整链路。</li>
+            <li>实现多渲染节点忙闲管理、节点冷却与故障转移；在节点不可用或提交前失败时切换可用节点，并通过 202 异步响应保持长视频任务的 GPU 租约，避免重复占用。</li>
+            <li>将 backend-node 产物流式归档至 FlowX 文件存储，统一任务、输入与输出目录，并补充硬链接复用与定时清理，减少临时文件残留和结果丢失。</li>
+          </ul>
+          <p class="line-row line-row-bold">AI 工具能力迭代与用户体验收敛</p>
+          <ul class="hi-list">
+            <li>落地 MiniMax H3 本地视频生成，支持文生、首帧/首尾帧、参考图与参考音频模式，并提供时长、比例、分辨率等参数校验和模型健康检查。</li>
+            <li>参与视频抠像、视频超分/补帧与无限画布视频增强等工具建设，补齐任意帧点选、蓝/绿底输出、倍率选择、上传规格限制和进度反馈。</li>
+            <li>将模型工作流封装为前端工具卡片和参数面板，处理多图上传、异步任务状态、失败重试、下载与历史结果恢复，让非技术用户可以通过表单完成复杂 AI 处理。</li>
           </ul>
         </div>
       </section>
@@ -63,9 +77,6 @@
             <div class="skill-label">Git 团队协作｜</div>
             <div class="skill-desc">了解 Git 分支管理、代码合并、冲突处理等基础操作，具备团队协作开发经验</div>
           </div>
-          <div class="skill-item">
-            <div class="skill-label">Godot & Flutter 应用开发｜</div>
-            <div class="skill-desc">具备 Godot 与 Flutter 应用开发经验，能够独立完成小型项目的设计、开发与部署</div>
           </div>
           <div class="skill-item">
             <div class="skill-label">计算机网络｜</div>
@@ -78,54 +89,27 @@
         </div>
       </section>
 
-      <!-- ── 项目 & 实践/在校经历 ── -->
+      <!-- ── 实践经历 ── -->
       <section>
-        <h2>项目 & 实践经历</h2>
-
-        <div class="entry">
-          <p class="line-row line-row-bold">2023.09 ~ 2026.07 ｜ 广师大网络信息中心 ｜ 网络管理员</p>
-          <ul class="hi-list">
-            <li>负责校园网络及终端设备日常运维</li>
-            <li>负责办公电脑、考试专用机的系统安装、环境配置及故障排查</li>
-            <li>先后 3 次参与全国计算机等级考试技术保障工作</li>
-            <li>担任学生组长，协调成员分工，组织招新和技术培训工作</li>
-          </ul>
-        </div>
-
-        <div class="entry">
-          <p class="line-row line-row-bold">在校期间 ｜ 数字媒体技术系 ｜ 主任助理</p>
-          <ul class="hi-list">
-            <li>协助系主任处理日常行政及信息化事务</li>
-            <li>负责办公文件整理归档、公文撰写</li>
-            <li>承担师生之间的信息传达与事务协调</li>
-          </ul>
-        </div>
-
-        <div class="entry">
-          <p class="line-row line-row-bold">2026.05 ~ 至今 ｜ Meloday·音乐日记 APP ｜ 全栈制作人</p>
-          <ul class="hi-list">
-            <li>主导 APP 的设计、开发与上线部署工作</li>
-            <li>技术栈：Next.js、TypeScript、Vercel</li>
-            <li>项目链接：<a href="https://github.com/Finjix/meloday" target="_blank" rel="noreferrer">https://github.com/Finjix/meloday</a></li>
-          </ul>
-        </div>
+        <h2>实践经历</h2>
 
         <div class="entry">
           <p class="line-row line-row-bold">2025.10 ｜ 广东大学生 GameJam 2025 ｜ 独立参赛选手</p>
           <ul class="hi-list">
+            <li>基于 Godot 游戏引擎，ChatGPT 辅助设计与开发</li>
             <li>两天时限内，以单人身份完赛，排名第 8（共 26 支队伍）</li>
-            <li>独立完成游戏策划、程序开发、像素美术及音效制作全流程</li>
-            <li>作品演示：<a href="https://www.bilibili.com/video/BV1sTwtzuETH/?share_source=copy_web&amp;vd_source=78ea525fa715ffdd658eac40bd5ad1f9" target="_blank" rel="noreferrer">https://www.bilibili.com/video/BV1sTwtzuETH</a></li>
+            <li>独立完成游戏设计、程序开发与测试、素材制作全流程</li>
           </ul>
         </div>
 
-      </section>
+        <div class="entry">
+          <p class="line-row line-row-bold">2023.09 ~ 2026.07 ｜ 广师大网络信息中心 ｜ 网络管理员</p>
+          <ul class="hi-list">
+            <li>负责校园网络终端的安装配置、测试、故障处理等运维工作/li>
+            <li>担任学生组长，协调成员分工，组织招新和技术培训</li>
+          </ul>
+        </div>
 
-      <!-- ── 自我评价 ── -->
-      <section>
-        <h2>自我评价</h2>
-        <p class="line-row">喜欢探索和折腾各类计算机技术，对新技术始终保持好奇，尤其关注 AI 领域的发展。善于借助 AI 分析和解决问题，具备扎实的 AI Coding 能力和企业项目实践经验。在 AI 工具的辅助下，逐渐成长为一名具备跨领域实践能力的 AI 工作者。希望将 AI 技术应用到更多真实场景中，打造出更多有价值的产品。
-</p>
       </section>
 
     </main>
