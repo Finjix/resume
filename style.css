@@ -260,6 +260,8 @@ section h2 {
     margin: 0;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+    font-size: 13.8px;
+    line-height: 1.6;
   }
 
   .page {
@@ -267,6 +269,72 @@ section h2 {
     margin: 0;
     padding: 0;
     min-height: auto;
+  }
+
+  /* Compact print layout: keep the PDF to one A4 page without changing copy. */
+  section {
+    margin-top: 25px;
+  }
+
+  section h2 {
+    font-size: 15.8px;
+    padding-bottom: 3px;
+    margin-bottom: 12px;
+  }
+
+  .skills-grid {
+    gap: 18px 14px;
+  }
+
+  .skill-label {
+    font-size: 13.6px;
+  }
+
+  .skill-desc {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .line-row {
+    font-size: 13px;
+    margin-bottom: 5px;
+    line-height: 1.62;
+  }
+
+  .hi-list {
+    margin-top: 3px;
+    margin-bottom: 7px;
+  }
+
+  .hi-list li {
+    font-size: 13px;
+    margin-bottom: 5px;
+    line-height: 1.65;
+  }
+
+  .internship-entry .line-row {
+    font-size: 13.2px;
+    line-height: 1.78;
+    margin-bottom: 10px;
+  }
+
+  .internship-entry .line-row-bold {
+    font-size: 13.8px;
+    margin-bottom: 6px;
+  }
+
+  .internship-list {
+    margin-top: 14px;
+  }
+
+  .internship-list li {
+    margin-bottom: 16px;
+    font-size: 13.2px;
+    line-height: 1.78;
+  }
+
+  .entry + .entry {
+    margin-top: 20px;
   }
 
   a {
