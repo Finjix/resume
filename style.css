@@ -66,6 +66,15 @@ a:hover {
   line-height: 1.65;
 }
 
+.header-left .meta a {
+  color: #2878b5;
+  text-decoration: none;
+}
+
+.header-left .meta a:hover {
+  text-decoration: underline;
+}
+
 .header-right {
   flex-shrink: 0;
   margin-left: 20px;
@@ -340,6 +349,10 @@ section h2 {
   a {
     color: var(--link) !important;
     text-decoration: none;
+  }
+
+  .header-left .meta a {
+    color: #2878b5 !important;
   }
 
   section {
