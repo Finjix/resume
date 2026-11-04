@@ -58,12 +58,12 @@ a:hover {
 .header-main {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .header-left {
-  flex: 1;
-  min-width: 0;
+  flex: none;
+  width: max-content;
 }
 
 .header-left h1 {
@@ -74,25 +74,22 @@ a:hover {
   color: var(--text);
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
+  white-space: nowrap;
+  contain: inline-size; /* 宽度跟随下方联系方式，学校右端与作品链接右端对齐 */
 }
 
 .grad-year {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--primary);
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #aaaaaa;
   margin-left: 10px;
-  padding: 1px 8px;
-  border-radius: 4px;
-  background: var(--primary-soft);
   line-height: 1.6;
-  position: relative;
-  top: -3px;
 }
 
 .meta-grid {
   display: grid;
-  grid-template-columns: max-content max-content;
-  column-gap: 44px;
+  grid-template-columns: max-content;
   row-gap: 4px;
   font-size: 13.2px;
   line-height: 1.65;
@@ -119,6 +116,11 @@ a:hover {
   color: var(--subtle);
 }
 
+.meta-sep {
+  color: #bbbbbb;
+  margin: 0 2px;
+}
+
 .meta-item dd a {
   color: var(--link);
 }
@@ -126,6 +128,7 @@ a:hover {
 .header-right {
   flex-shrink: 0;
   margin-left: 20px;
+  margin-top: 5.5px; /* 头像顶部对齐名字字形顶部 */
 }
 
 .avatar {
@@ -155,7 +158,7 @@ section h2 {
 /* ── Entries ── */
 
 .entry + .entry {
-  margin-top: 24px;
+  margin-top: 28px;
 }
 
 .entry-head {
@@ -163,6 +166,7 @@ section h2 {
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
+  margin-bottom: 6px;
 }
 
 .entry-org {
@@ -172,17 +176,18 @@ section h2 {
 }
 
 .entry-dept {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--subtle);
+  font-size: inherit;
+  font-weight: 700;
+  color: var(--text);
   margin-left: 10px;
   padding-left: 10px;
   border-left: 1px solid #cccccc;
 }
 
 .entry-date {
-  font-size: 13px;
-  color: var(--subtle);
+  font-size: 14.6px;
+  font-weight: 400;
+  color: var(--text);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
@@ -213,22 +218,11 @@ section h2 {
 
 .internship-list li {
   position: relative;
-  padding-left: 16px;
+  padding-left: 0;
   margin-bottom: 10px;
   font-size: 13.2px;
   line-height: 1.75;
   text-align: justify;
-}
-
-.internship-list li::before {
-  content: "";
-  position: absolute;
-  left: 3px;
-  top: 0.78em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--primary);
 }
 
 .internship-list li:last-child {
@@ -236,7 +230,7 @@ section h2 {
 }
 
 .internship-topic {
-  color: var(--text);
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -265,20 +259,8 @@ section h2 {
   color: var(--text);
   white-space: nowrap;
   flex-shrink: 0;
-  width: 138px;
+  width: 122px;
   position: relative;
-  padding-left: 16px;
-}
-
-.skill-label::before {
-  content: "";
-  position: absolute;
-  left: 3px;
-  top: 0.72em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--primary);
 }
 
 .skill-desc {
@@ -387,13 +369,12 @@ section h2 {
       <header class="header">
         <div class="header-main">
           <div class="header-left">
-            <h1>钟丰骏<span class="grad-year">2027 届</span></h1>
+            <h1>钟丰骏<span class="grad-year">广东技术师范大学</span></h1>
             <dl class="meta-grid">
-              <div class="meta-item"><dt>学校</dt><dd>广东技术师范大学</dd></div>
-              <div class="meta-item"><dt>专业</dt><dd>数字媒体技术</dd></div>
+              <div class="meta-item meta-item-wide"><dd>2027 届<span class="meta-sep">｜</span>数字媒体技术系</dd></div>
               <div class="meta-item"><dt>电话</dt><dd>136-2045-5680</dd></div>
               <div class="meta-item"><dt>邮箱</dt><dd>zf2857@qq.com</dd></div>
-              <div class="meta-item meta-item-wide"><dt>主页</dt><dd><a href="https://finjix.top/" target="_blank">https://finjix.top/</a></dd></div>
+              <div class="meta-item meta-item-wide"><dt>作品</dt><dd><a href="https://shushu.finjix.top/" target="_blank">https://shushu.finjix.top/</a></dd></div>
             </dl>
           </div>
           <div class="header-right">
@@ -408,13 +389,12 @@ section h2 {
 
         <div class="entry internship-entry">
           <div class="entry-head">
-            <span class="entry-org">点点互动<span class="entry-dept">Publishing Center · AI Foundry</span></span>
+            <span class="entry-org">点点互动<span class="entry-dept">Publishing Center · AI Foundry · AI 自动化开发实习生</span></span>
             <span class="entry-date">2026.09 ~ 至今</span>
           </div>
-          <p class="entry-role">AI 自动化开发实习生</p>
-          <p class="line-row"><span class="label">项目背景：</span>面向 AI 业务需求开发自动化生产工具，构建视频智能混剪、玩法素材生成等能力；开发飞书智能体，实现业务工具便捷调用、需求收集整理及成品审核自动化，打通业务需求与 AI 内容生产全流程</p>
+          <p class="line-row">面向 AI 业务需求开发自动化生产工具，构建视频智能混剪、玩法素材生成等能力；开发飞书智能体，实现业务工具便捷调用、需求收集整理及成品审核自动化，打通业务需求与 AI 内容生产全流程</p>
           <ul class="internship-list">
-            <li><span class="internship-topic">视频 AI 混剪工作流：</span>针对《无尽冬日》大量口播混剪投放需求，搭建 Agent 工作流替代人工选素材、剪辑、加字幕及包装；提供原片素材即可由 AI 完成片段筛选、剪辑、字幕、包装与配乐，一次对话批量出片，<strong>约 30 秒</strong>完成一条可投放成片</li>
+            <li><span class="internship-topic">视频 AI 混剪工作流：</span>针对《无尽冬日》大量口播混剪投放需求，搭建 Agent 工作流替代人工选素材、剪辑、加字幕及包装；提供原片素材即可由 AI 完成片段筛选、剪辑、字幕、包装与配乐，一次对话批量出片，约 30 秒完成一条可投放成片</li>
             <li><span class="internship-topic">AI 试玩广告原型与量产：</span>基于 AI + Three.js 跳过传统策划、美术、程序协同开发流程，制作《无尽冬日》《Kingshot》H5 试玩广告原型；替换模型资产即可换皮量产，无人操作时角色自动游玩，并支持直接内录为视频素材</li>
             <li><span class="internship-topic">定制 Agent 与业务自动化：</span>开发飞书 Agent，以插件形式统一接入团队各类 AI 能力，私聊或 @ 机器人即可调用，无需分发、同步更新；定制业务“搬砖”智能体，自动完成需求收集整理、飞书文档编辑、系统订单创建、素材上传与成片审核</li>
           </ul>
@@ -422,14 +402,13 @@ section h2 {
 
         <div class="entry internship-entry">
           <div class="entry-head">
-            <span class="entry-org">网易互娱<span class="entry-dept">运营中心 · 管线生产与设计组</span></span>
+            <span class="entry-org">网易互娱<span class="entry-dept">运营中心 · 管线生产与设计组 · 内容制作实习生</span></span>
             <span class="entry-date">2026.04 ~ 2026.09</span>
           </div>
-          <p class="entry-role">内容制作实习生</p>
-          <p class="line-row"><span class="label">项目背景：</span>参与游戏美术 AIGC 平台建设，整合封装图像、视频生成等 AI 模型能力，面向游戏运营与设计团队的业务需求构建美术内容生产管线，提升内容生产效率；累计贡献 <strong>2000+ 次</strong>代码提交，覆盖 <strong>20+ 个</strong>业务模块</p>
+          <p class="line-row">参与游戏美术 AIGC 平台建设，整合封装图像、视频生成等 AI 模型能力，面向游戏运营与设计团队的业务需求构建美术内容生产管线，提升内容生产效率；累计贡献 2000+ 次代码提交，覆盖 20+ 个业务模块</p>
           <ul class="internship-list">
-            <li><span class="internship-topic">FlowX AI 应用平台：</span>参与建设面向业务的 AI 应用平台，将分散的 AI 能力沉淀为规范内置、可一键调用的复用生产管线；平台累计上线 <strong>46 条</strong> AI 管线，覆盖 <strong>58 款</strong>游戏、<strong>22 个</strong>业务环节，累计调用 <strong>37000+ 次</strong>，月均产出素材 <strong>5300+ 套</strong></li>
-            <li><span class="internship-topic">营销素材 AI 生产管线：</span>落地《梦幻西游》手游回流活动，将活动、渠道与素材收敛为业务输入，自动匹配 <strong>64 个</strong>宣发渠道的规格与场景策略；版式与主体双参考约束布局与角色，按安全区合成导出，视觉核验未通过时自动修正，一次提交交付多规格 A/B 双版成品；单任务最多 <strong>150+ 张</strong>素材、<strong>12–15 分钟</strong>交付，验收一次通过率 <strong>90%</strong>，单张调用成本降低<strong>约 70%</strong></li>
+            <li><span class="internship-topic">FlowX AI 应用平台：</span>参与建设面向业务的 AI 应用平台，将分散的 AI 能力沉淀为规范内置、可一键调用的复用生产管线；平台累计上线 46 条 AI 管线，覆盖 58 款游戏、22 个业务环节，累计调用 37000+ 次，月均产出素材 5300+ 套</li>
+            <li><span class="internship-topic">营销素材 AI 生产管线：</span>落地《梦幻西游》手游回流活动，将活动、渠道与素材收敛为业务输入，自动匹配 64 个宣发渠道的规格与场景策略；版式与主体双参考约束布局与角色，按安全区合成导出，视觉核验未通过时自动修正，一次提交交付多规格 A/B 双版成品；单任务最多 150+ 张素材、12–15 分钟交付，验收一次通过率 90%，单张调用成本降低约 70%</li>
             <li><span class="internship-topic">AI 内容工具链与多模态 Agent：</span>开发 After Effects 与 Blender 内容生产插件，将视频模板与渲染能力封装为平台可调用工具；设计图像、视频、音频内容生产 Agent，将跨工具制作流程收敛为自然语言任务，支持批量执行与断线恢复</li>
           </ul>
         </div>
