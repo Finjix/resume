@@ -3,8 +3,10 @@
   --panel: #ffffff;
   --text: #222222;
   --subtle: #555555;
+  --muted: #888888;
   --primary: #2878b5;
-  --link: #555555;
+  --primary-soft: #e8f1f8;
+  --link: #2878b5;
 }
 
 * {
@@ -37,42 +39,81 @@ a:hover {
   min-height: 297mm;
   margin: 0 auto;
   background: var(--panel);
-  padding: 38px 32px;
+  padding: 38px 36px;
 }
 
 /* ── Header ── */
 
 .header {
-  margin-bottom: 14px;
+  margin-bottom: 6px;
 }
 
 .header-main {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+}
+
+.header-left {
+  flex: 1;
+  min-width: 0;
 }
 
 .header-left h1 {
-  font-size: 29px;
+  font-size: 30px;
   font-weight: 700;
-  margin-bottom: 5px;
+  line-height: 1.2;
+  margin-bottom: 14px;
   color: var(--text);
+  display: flex;
+  align-items: baseline;
 }
 
-.header-left .meta {
+.grad-year {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-left: 10px;
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: var(--primary-soft);
+  line-height: 1.6;
+  position: relative;
+  top: -3px;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 44px;
+  row-gap: 4px;
   font-size: 13.2px;
-  color: var(--subtle);
-  margin-bottom: 3px;
   line-height: 1.65;
 }
 
-.header-left .meta a {
-  color: #2878b5;
-  text-decoration: none;
+.meta-item {
+  display: flex;
 }
 
-.header-left .meta a:hover {
-  text-decoration: underline;
+.meta-item-wide {
+  grid-column: 1 / -1;
+}
+
+.meta-item dt {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.meta-item dt::after {
+  content: "：";
+}
+
+.meta-item dd {
+  color: var(--subtle);
+}
+
+.meta-item dd a {
+  color: var(--link);
 }
 
 .header-right {
@@ -83,17 +124,16 @@ a:hover {
 .avatar {
   width: 100px;
   height: 100px;
-  max-width: 100px;
-  max-height: 100px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--primary);
+  display: block;
 }
 
 /* ── Section headers ── */
 
 section {
-  margin-top: 27px;
+  margin-top: 28px;
 }
 
 section h2 {
@@ -105,45 +145,52 @@ section h2 {
   margin-bottom: 14px;
 }
 
-/* ── Skills grid ── */
+/* ── Entries ── */
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px 14px;
+.entry + .entry {
+  margin-top: 24px;
 }
 
-.skill-item {
-  padding: 0;
+.entry-head {
   display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
 }
 
-.skill-label {
-  font-weight: 600;
-  font-size: 13.8px;
+.entry-org {
+  font-size: 14.6px;
+  font-weight: 700;
   color: var(--text);
-  white-space: nowrap;
-  flex-shrink: 0;
 }
 
-.skill-desc {
-  font-size: 13.2px;
-  line-height: 1.75;
+.entry-dept {
+  font-size: 13px;
+  font-weight: 400;
   color: var(--subtle);
-  flex: 1;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid #cccccc;
 }
 
-/* ── Line rows (unified for all sections) ── */
+.entry-date {
+  font-size: 13px;
+  color: var(--subtle);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-role {
+  font-size: 13.4px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 2px 0 6px;
+}
 
 .line-row {
   font-size: 13.2px;
-  margin-bottom: 6px;
-  line-height: 1.7;
+  line-height: 1.75;
   text-align: justify;
-}
-
-.line-row-bold {
-  font-weight: 600;
 }
 
 .label {
@@ -151,53 +198,30 @@ section h2 {
   color: var(--text);
 }
 
-.hi-list {
-  padding-left: 20px;
-  margin-bottom: 10px;
-  margin-top: 4px;
-}
-
-.hi-list li {
-  font-size: 13px;
-  margin-bottom: 7px;
-  line-height: 1.75;
-}
-
-/* ── Internship highlights ── */
-
-.internship-entry .line-row {
-  font-size: 13.2px;
-  line-height: 1.78;
-  margin-bottom: 10px;
-}
-
-.internship-entry .line-row-bold {
-  font-size: 13.8px;
-  margin-bottom: 6px;
-}
-
 .internship-list {
   list-style: none;
   padding-left: 0;
-  margin: 14px 0 0;
+  margin: 10px 0 0;
 }
 
 .internship-list li {
   position: relative;
-  padding-left: 18px;
-  margin-bottom: 16px;
+  padding-left: 16px;
+  margin-bottom: 10px;
   font-size: 13.2px;
-  line-height: 1.78;
+  line-height: 1.75;
   text-align: justify;
 }
 
 .internship-list li::before {
-  content: "•";
+  content: "";
   position: absolute;
-  left: 4px;
-  top: 0;
-  color: var(--primary);
-  font-weight: 700;
+  left: 3px;
+  top: 0.78em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
 }
 
 .internship-list li:last-child {
@@ -205,14 +229,56 @@ section h2 {
 }
 
 .internship-topic {
-  color: var(--primary);
+  color: var(--text);
   font-weight: 700;
 }
 
-/* ── Entry (for campus experience items) ── */
+.internship-list strong,
+.line-row strong {
+  font-weight: 600;
+  color: var(--text);
+}
 
-.entry + .entry {
-  margin-top: 25px;
+/* ── Skills ── */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: baseline;
+}
+
+.skill-label {
+  font-weight: 700;
+  font-size: 13.4px;
+  color: var(--text);
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 138px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.skill-label::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.skill-desc {
+  font-size: 13.2px;
+  line-height: 1.75;
+  color: var(--subtle);
+  flex: 1;
 }
 
 /* ── Export toolbar ── */
@@ -223,7 +289,7 @@ section h2 {
   right: 24px;
   z-index: 1000;
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .btn-export {
@@ -246,18 +312,19 @@ section h2 {
 }
 
 .btn-pdf {
-  background: #2878b5;
+  background: var(--primary);
 }
 
 .btn-png {
-  background: #d35400;
+  background: #444444;
 }
 
 /* ── Print ── */
 
 @media print {
   @page {
-    margin: 0.75cm 0.85cm;
+    size: A4;
+    margin: 0;
   }
 
   .no-print {
@@ -269,110 +336,20 @@ section h2 {
     margin: 0;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
-    font-size: 13.8px;
-    line-height: 1.6;
   }
 
   .page {
-    width: 100%;
+    width: 210mm;
+    height: 297mm;
+    min-height: 0;
     margin: 0;
-    padding: 0;
-    min-height: auto;
+    box-shadow: none;
+    overflow: hidden;
   }
 
-  /* Compact print layout: keep the PDF to one A4 page without changing copy. */
-  section {
-    margin-top: 25px;
-  }
-
-  section h2 {
-    font-size: 15.8px;
-    padding-bottom: 3px;
-    margin-bottom: 12px;
-  }
-
-  .skills-grid {
-    gap: 18px 14px;
-  }
-
-  .skill-label {
-    font-size: 13.6px;
-  }
-
-  .skill-desc {
-    font-size: 13px;
-    line-height: 1.65;
-  }
-
-  .line-row {
-    font-size: 13px;
-    margin-bottom: 5px;
-    line-height: 1.62;
-  }
-
-  .hi-list {
-    margin-top: 3px;
-    margin-bottom: 7px;
-  }
-
-  .hi-list li {
-    font-size: 13px;
-    margin-bottom: 5px;
-    line-height: 1.65;
-  }
-
-  .internship-entry .line-row {
-    font-size: 13.2px;
-    line-height: 1.78;
-    margin-bottom: 10px;
-  }
-
-  .internship-entry .line-row-bold {
-    font-size: 13.8px;
-    margin-bottom: 6px;
-  }
-
-  .internship-list {
-    margin-top: 14px;
-  }
-
+  .entry,
+  .skill-item,
   .internship-list li {
-    margin-bottom: 16px;
-    font-size: 13.2px;
-    line-height: 1.78;
-  }
-
-  .entry + .entry {
-    margin-top: 20px;
-  }
-
-  a {
-    color: var(--link) !important;
-    text-decoration: none;
-  }
-
-  .header-left .meta a {
-    color: #2878b5 !important;
-  }
-
-  section {
-    break-inside: auto;
-  }
-
-  section:last-of-type {
-    break-before: auto;
-    page-break-before: auto;
-  }
-
-  .line-row-bold {
-    break-inside: avoid;
-  }
-
-  .entry {
-    break-inside: avoid;
-  }
-
-  .hi-list {
     break-inside: avoid;
   }
 }
@@ -385,11 +362,5 @@ section h2 {
   .page {
     margin: 0 auto 20px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-  }
-}
-
-@media (max-width: 640px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
   }
 }
